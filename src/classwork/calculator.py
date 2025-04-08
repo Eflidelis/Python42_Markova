@@ -30,4 +30,3 @@ def calc():
     return result
 
 calc()
-
