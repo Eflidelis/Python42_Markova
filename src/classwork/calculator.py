@@ -4,6 +4,8 @@ def calc():
     :return: результат вычислений
     '''
 
+    print("Hello")
+
     num1 = int(input("Введите первое число: "))
     num2 = int(input("Введите второе число: "))
     sign = input("Введите знак операции: ")
