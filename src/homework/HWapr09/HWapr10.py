@@ -125,7 +125,7 @@ def main():
         print("5 - Вычисление степени каждого числа в списке")
         print("6 - Вычисление произведения чисел списка")
         print("7 - Ввести новый список")
-        print("8 - Выход")
+        print("0 - Выход")
 
         choice = int(input("Введите номер действия (1-8): "))
 
@@ -164,7 +164,7 @@ def main():
                 cleaned_num = num.strip()
                 int_value = int(cleaned_num)
                 int_list.append(int_value)
-        elif choice == 8:
+        elif choice == 0:
             print("До свидания!")
             break
         else:
