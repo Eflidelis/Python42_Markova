@@ -1,3 +1,5 @@
+from fibonacci.fibonacci import fib1 as fibo1
+
 def calc():
     '''
     функция калькулятора
@@ -25,6 +27,12 @@ def calc():
         print(result)
     elif sign == "^":
         result = num1 ** num2
+        print(result)
+    elif sign == "$":
+        result = fibo1
+        print(result)
+    elif sign == "#":
+        result = fibo1
         print(result)
     else:
         print("Некорректный знак операции")
