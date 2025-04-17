@@ -1,0 +1,3 @@
+[submodule "src/homework/sub"]
+	path = src/homework/sub
+	url = https://github.com/Eflidelis/Lesson42.git
