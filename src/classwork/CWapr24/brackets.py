@@ -6,35 +6,32 @@ def brackets(br_str):
     for br in br_str:
         if br == "(":
             parentheses_br_count += 1
-        if br == ")" and parentheses_br_count == 1:
+        elif br == ")":
+            if parentheses_br_count == 0:
+                return False
             parentheses_br_count -= 1
-        elif br == ")" and parentheses_br_count == 0:
-            return False
-        if br == "[":
+
+        elif br == "[":
             square_br_count += 1
-        if br == "]" and square_br_count == 1:
+        elif br == "]":
+            if square_br_count == 0:
+                return False
             square_br_count -= 1
-        elif br == "]" and square_br_count == 0:
-            return False
-        if br == "{":
+
+        elif br == "{":
             curly_br_count += 1
-        if br == "}" and curly_br_count == 1:
+        elif br == "}":
+            if curly_br_count == 0:
+                return False
             curly_br_count -= 1
-        elif br == "}" and curly_br_count == 0:
-            return False
 
-
-    if parentheses_br_count !=0 or square_br_count !=0 or curly_br_count !=0:
-        return False
-    if parentheses_br_count == 0 and square_br_count == 0 and curly_br_count == 0:
-        return True
+    return parentheses_br_count == 0 and square_br_count == 0 and curly_br_count == 0
 
 
 def main():
-    br_str = input("Введите строку бла бла бла: ")
+    br_str = input("Введите строку, состоящую из скобок: ")
     result = brackets(br_str)
     print(result)
-
 
 
 if __name__ == "__main__":
