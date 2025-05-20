@@ -22,3 +22,15 @@ class Stack:
     def get_stack(self):
         return self.__lst
 
+   def __getitem__(self, valera):
+       return self.__container[valera]
+
+   def __delitem__(self, key):
+       self.__container.pop(key)
+
+
+   def __setitem__(self, key, value):
+       self.__container.append(value)
+
+       
+
