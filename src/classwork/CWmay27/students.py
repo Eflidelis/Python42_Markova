@@ -12,6 +12,7 @@ class Person():
     def str(self):
         return f"Имя: {self.__name}\nВозраст: {self.__age}"
 
+
 class Lector(Person):
     __cathedra = str()
 
@@ -24,8 +25,6 @@ class Lector(Person):
 
     def func_lector(self):
         return f"Я преподаю {self.__cathedra}"
-
-
 
 
 class Admin(Person):
