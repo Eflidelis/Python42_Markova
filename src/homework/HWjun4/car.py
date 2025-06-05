@@ -1,4 +1,31 @@
-class Car():
+import abc
+
+
+class Interface(abc.ABC):
+    def __init__(self):
+        pass
+
+    def __del__(self):
+        pass
+
+    @abc.abstractmethod
+    def forward_moving(self):
+        pass
+
+    @abc.abstractmethod
+    def hand_brake(self):
+        pass
+
+    @abc.abstractmethod
+    def start_engine(self):
+        pass
+
+
+def function(obj : Interface):
+        pass
+
+
+class Car(Interface):
     __price = 0
     __name = str()
     __color = str()
@@ -52,6 +79,15 @@ class Car():
             raise ValueError("Мощность не может быть отрицательной.")
         self.__power = value
 
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        pass
+
 
 class Sedan(Car):
     __transmission = str()
@@ -85,6 +121,16 @@ class Sedan(Car):
         if value < 0:
             raise ValueError("Кол-во опций не может быть отрицательным.")
         self.__additional_options = value
+
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        return f"врум-врум-врум!"
+
 
 
 class Off_road_vehicle(Car):
@@ -128,6 +174,16 @@ class Off_road_vehicle(Car):
     @abs.setter
     def abs(self, value):
         self.__abs = value
+
+
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        return f"РрррРррРРрр!"
 
 
 class Cargo(Car):
@@ -185,3 +241,12 @@ class Cargo(Car):
         if value < 0:
             raise ValueError("Кол-во сидений не может быть отрицательным.")
         self.__seats = value
+
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        return f"бр-бр-бр-бр-бр!"

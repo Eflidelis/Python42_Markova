@@ -1,10 +1,37 @@
-class Car():
+import abc
+
+
+class Interface(abc.ABC):
+    def __init__(self):
+        pass
+
+    def __del__(self):
+        pass
+
+    @abc.abstractmethod
+    def forward_moving(self):
+        pass
+
+    @abc.abstractmethod
+    def hand_brake(self):
+        pass
+
+    @abc.abstractmethod
+    def start_engine(self):
+        pass
+
+
+def function(obj: Interface):
+    pass
+
+
+class Car(Interface):
     __price = 0
     __name = str()
     __color = str()
     __power = 0
 
-    def __init__(self, price: int = 0, name : str = "", power: int = 0, color : str = ""):
+    def __init__(self, price: int = 0, name: str = "", power: int = 0, color: str = ""):
         self.__name = name
         self.__power = power
         self.__color = color
@@ -52,12 +79,22 @@ class Car():
             raise ValueError("Мощность не может быть отрицательной.")
         self.__power = value
 
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        pass
+
 
 class Sedan(Car):
     __transmission = str()
     __additional_options = 0
 
-    def __init__(self, price: int = 0, name : str = "", power: int = 0, color : str = "", transmission : str = "", additional_options : int = 0):
+    def __init__(self, price: int = 0, name: str = "", power: int = 0, color: str = "", transmission: str = "",
+                 additional_options: int = 0):
         super().__init__(price, name, power, color)
         self.__transmission = transmission
         self.__additional_options = additional_options
@@ -86,14 +123,23 @@ class Sedan(Car):
             raise ValueError("Кол-во опций не может быть отрицательным.")
         self.__additional_options = value
 
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        return f"врум-врум-врум!"
+
 
 class Off_road_vehicle(Car):
     __frame = str()
     __awd = str()
     __abs = str()
 
-    def __init__(self, price : int = 0, name : str = "", power : int = 0, color : str = "", frame : str = "",
-                 awd : str = "", abs : str = ""):
+    def __init__(self, price: int = 0, name: str = "", power: int = 0, color: str = "", frame: str = "",
+                 awd: str = "", abs: str = ""):
         super().__init__(price, name, power, color)
         self.__frame = frame
         self.__awd = awd
@@ -129,6 +175,15 @@ class Off_road_vehicle(Car):
     def abs(self, value):
         self.__abs = value
 
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        return f"РрррРррРРрр!"
+
 
 class Cargo(Car):
     __tonnage = 0
@@ -136,8 +191,8 @@ class Cargo(Car):
     __sleeping_place = str()
     __seats = 0
 
-    def __init__(self, price : int = 0, name : str = "", power : int = 0, color : str = "", tonnage : int = 0,
-                 trailer : str = "", sleeping_place : str = "", seats : int = 0):
+    def __init__(self, price: int = 0, name: str = "", power: int = 0, color: str = "", tonnage: int = 0,
+                 trailer: str = "", sleeping_place: str = "", seats: int = 0):
         super().__init__(price, name, power, color)
         self.__tonnage = tonnage
         self.__trailer = trailer
@@ -185,4 +240,30 @@ class Cargo(Car):
         if value < 0:
             raise ValueError("Кол-во сидений не может быть отрицательным.")
         self.__seats = value
+
+    def forward_moving(self):
+        pass
+
+    def hand_brake(self):
+        pass
+
+    def start_engine(self):
+        return f"бр-бр-бр-бр-бр!"
+
+
+class Garage():
+    def __init__(self):
+        self.cars = []
+
+    def add_car(self, car : Car):
+        self.cars.append(car)
+
+    def extend_car(self, lst: list ):
+        self.cars.extend(lst)
+
+
+    def start_all_engines(self):
+        for car in self.cars:
+            print(car.start_engine())
+
 
