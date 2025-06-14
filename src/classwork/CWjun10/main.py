@@ -6,7 +6,7 @@ def main():
     floor = Floor(area=200, el=220, price=2000, room=5, wc=2)
     roof = Roof(area=50, el=220, price=500, type="черепица", satellite="НТВ")
     add_buildings = AddBuildings(area=20, el=380, price=200, types="курятник")
-    house = House()
+    house = House(basement, floor, roof, add_buildings)
 
     basement.basement_cost()
     floor.floor_cost()
@@ -15,4 +15,7 @@ def main():
     total_cost = house.total_cost()
 
     print(total_cost)
+
+if __name__ == "__main__":
+    main()
 

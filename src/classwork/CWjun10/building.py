@@ -54,7 +54,7 @@ class Basement(BuildingComponent):
         pass
 
     def basement_cost(self):
-        total = self.__area * 1000 + self.__el * 100 + self.__price * 10
+        total = self.area * 1000 + self.el * 100 + self.price * 10
         return total
 
     @property
@@ -90,7 +90,7 @@ class Floor(BuildingComponent):
 
 
     def floor_cost(self):
-        total = self.__area * 1000 + self.__el * 100 + self.__price * 10 + self.__room * 100 + self.__wc * 50
+        total = self.area * 1000 + self.el * 100 + self.price * 10 + self.room * 100 + self.wc * 50
         return total
 
     @property
@@ -123,7 +123,7 @@ class Roof(BuildingComponent):
         pass
 
     def roof_cost(self):
-        total = self.__area * 1000 + self.__el * 100 + self.__price * 10
+        total = self.area * 1000 + self.el * 100 + self.price * 10
         return total
 
     @property
@@ -154,7 +154,7 @@ class AddBuildings(BuildingComponent):
         pass
 
     def add_buildings_cost(self):
-        total = self.__area * 1000 + self.__el * 100 + self.__price * 10
+        total = self.area * 1000 + self.el * 100 + self.price * 10
         return total
 
     @property
